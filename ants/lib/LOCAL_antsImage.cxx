@@ -40,10 +40,10 @@ py::array toNumpy( py::capsule myPointer )
 
 std::string ptrstr(py::capsule c)
 {
-    std::stringstream ss;
-    ss << (void const *)c;
-    std::string s = ss.str();
-    return s;
+	char buffer[50];
+	int n = sprintf(buffer, "0x%p", (void const *)c);
+	std::string s(buffer, n);
+	return s;
 }
 
 
