@@ -246,7 +246,7 @@ class TestModule_resample_image(unittest.TestCase):
 
     def test_resample_image_to_target_example(self):
         fi = ants.image_read(ants.get_ants_data('r16'))
-        fi2mm = ants.resample_image(fi, (2,2), use_voxels=0, interp_type='linear')
+        fi2mm = ants.resample_image(fi, (2,2), use_voxels=0, interp_type=1)
         resampled = ants.resample_image_to_target(fi2mm, fi, verbose=True)
 
 
@@ -262,6 +262,7 @@ class TestModule_symmetrize_image(unittest.TestCase):
         image = ants.image_read(ants.get_ants_data('r16'))
         simage = ants.symmetrize_image(image)
 
+
 class TestModule_build_template(unittest.TestCase):
 
     def setUp(self):
@@ -274,6 +275,14 @@ class TestModule_build_template(unittest.TestCase):
         image = ants.image_read(ants.get_ants_data('r16'))
         image2 = ants.image_read(ants.get_ants_data('r27'))
         timage = ants.build_template( image_list = (image, image2 ) )
+
+    def test_type_of_transform(self):
+        image = ants.image_read(ants.get_ants_data('r16'))
+        image2 = ants.image_read(ants.get_ants_data('r27'))
+        timage = ants.build_template( image_list = (image, image2 ))
+        timage = ants.build_template( image_list = (image, image2 ),
+                                      type_of_transform='SyNCC')
+
 
 class TestModule_multivar(unittest.TestCase):
 

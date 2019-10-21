@@ -38,6 +38,17 @@ py::array toNumpy( py::capsule myPointer )
     return numpyHelper<ImageType>( itkImage );
 }
 
+/** original version
+std::string ptrstr(py::capsule c)
+{
+    std::stringstream ss;
+    ss << (void const *)c;
+    std::string s = ss.str();
+    return s;
+}
+*/
+
+// version contributed by @SGotla
 std::string ptrstr(py::capsule c)
 {
 	char buffer[50];

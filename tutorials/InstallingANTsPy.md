@@ -20,10 +20,9 @@ pip install https://github.com/ANTsX/ANTsPy/releases/download/v0.1.4/antspy-0.1.
 If you want the latest code, you can install directly from source (takes ~45 min):
 
 ```bash
-git clone https://github.com/ANTsX/ANTsPy.git
-cd ANTsPy
-python setup.py install
+pip install git+https://github.com/ANTsX/ANTsPy.git
 ```
+with an option to specify the branch or particular release by `@v0.1.6` on the end of the path.
 
 ------------------------------------------------------------------------------
 
@@ -52,7 +51,7 @@ and how to add code.
 ```bash
 git clone https://github.com/ANTsX/ANTsPy.git
 cd ANTsPy
-python setup.py develop
+python setup.py install
 ```
 
 ANTsPy is known to install on MacOS, Ubuntu, and CentOS - all with Python3.6. It does not

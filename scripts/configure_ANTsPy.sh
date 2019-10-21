@@ -5,7 +5,8 @@
 
 cd ants/lib # go to lib dir
 if [[ ! -d ~/pybind11 ]]; then
-    git clone https://github.com/ncullen93/pybind11.git
+  git clone https://github.com/stnava/pybind11.git
+#  git clone https://github.com/ncullen93/pybind11.git
 fi
 cd ../../ # go back to main dir
 
@@ -22,7 +23,7 @@ cp data/* ~/.antspy/
 # clone ANTs and move all files into library directory
 
 antsgit=https://github.com/ANTsX/ANTs.git
-antstag=23e88fe16fde013909f601438f5407079eb0ad57 # truncate bug
+antstag=7ea9f7441bf2415478814fa0ff4e47941e68fd03 # N4 bug
 echo "ANTS;${antstag}" >> ./data/softwareVersions.csv
 
 cd ants/lib # go to lib dir
